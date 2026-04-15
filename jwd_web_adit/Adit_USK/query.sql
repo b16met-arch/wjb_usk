@@ -1,0 +1,9 @@
+CREATE TABLE pendaftaran (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    no_hp VARCHAR(15) NOT NULL,
+    alamat TEXT NOT NULL,
+    program VARCHAR(100) NOT NULL,
+    tanggal_daftar TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

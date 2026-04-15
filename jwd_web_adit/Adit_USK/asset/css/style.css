@@ -1,0 +1,880 @@
+:root {
+  --primary: #2f8f57;
+  --primary-dark: #1f5d39;
+  --primary-soft: #e8f5ec;
+  --bg-color: #f4faf6;
+  --bg-light: #f7efe1;
+  --text-dark: #163728;
+  --text-muted: #4f6b5c;
+  --border-soft: rgba(31, 93, 57, 0.14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/*navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 7%;
+  background-color: rgba(244, 250, 246, 0.96);
+  border-bottom: 1px solid rgba(31, 93, 57, 0.14);
+  box-shadow: 0 10px 30px rgba(22, 55, 40, 0.08);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-nav .btn-login {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.navbar .navbar-nav .btn-login:hover {
+  background-color: var(--primary-dark);
+}
+
+.navbar .navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.7rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.navbar .navbar-logo::before {
+  content: "S";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 0.7rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(47, 143, 87, 0.28);
+}
+
+.navbar .navbar-nav a {
+  color: var(--text-dark);
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary-dark);
+}
+
+.navbar .navbar-nav a.active {
+  color: var(--primary-dark);
+}
+
+.navbar .navbar-nav a.active::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.12rem solid var(--primary-dark);
+  transform: scaleX(0);
+  transition: 0.3s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+  transition: 0.3s linear;
+}
+
+.navbar .navbar-extra a {
+  color: var(--text-dark);
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary-dark);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/*Hero Section*/
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.image img {
+  width: 350px;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  height: 60%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(95, 174, 107) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta:hover {
+  background-color: #019875;
+}
+
+/* About Section */
+.about {
+  padding: 8rem 1.4rem 7%;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+.about p {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .row .about-img img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.15));
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.about .row .content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* Visi & Misi Cards */
+.about .visi-misi {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}
+
+.about .visi-misi .card {
+  background-color: #fff;
+  color: #333;
+  flex: 1 1 30rem;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about .visi-misi .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.about .visi-misi .card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.about .visi-misi .card p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.about .visi-misi .card ul {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 300;
+  padding-left: 2rem;
+}
+
+.about .visi-misi .card ul li {
+  margin-bottom: 1rem;
+}
+
+/*media query*/
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(244, 250, 246, 0.98);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--text-dark);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a.active {
+    color: var(--primary-dark);
+  }
+
+  .navbar .navbar-nav a.active::after {
+    transform: scaleX(0.5);
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: auto;
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* --- Struktur Organisasi / Team Section --- */
+.team {
+  padding: 2rem 1.4rem 8rem;
+}
+
+.team h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--primary);
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 2rem 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.team-card {
+  flex: 0 0 250px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--primary);
+  background-color: var(--bg-light);
+}
+
+.team-card h4 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.team-card p {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* Tombol Slider */
+.carousel-btn {
+  background-color: var(--primary);
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: #019875;
+}
+
+.carousel-btn.prev {
+  left: -20px;
+}
+
+.carousel-btn.next {
+  right: -20px;
+}
+
+/* --- Program Pelatihan / Layanan Kami --- */
+.program {
+  padding: 10rem 1.4rem 8rem;
+}
+
+.program h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--primary);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.program-card {
+  background-color: #fff;
+  color: #333;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-top: 4px solid var(--primary); /* Aksen garis hijau di atas card */
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.program-icon {
+  color: var(--primary);
+  width: 45px;
+  height: 45px;
+  margin-bottom: 1.5rem;
+}
+
+.program-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.program-duration {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--bg-light);
+  color: var(--primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.program-duration i {
+  width: 16px;
+  height: 16px;
+}
+
+.program-card p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #555;
+}
+
+/* --- Auth Section (Login & Register) --- */
+.auth-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
+.auth-container {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  color: #333;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  font-size: 2.5rem;
+}
+
+.auth-container .input-group {
+  margin-bottom: 1.5rem;
+}
+
+.auth-container .input-group input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  transition: border 0.3s ease;
+}
+
+.auth-container .input-group input:focus {
+  border-color: var(--primary);
+}
+
+.auth-container .btn-submit {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+}
+
+.auth-container .btn-submit:hover {
+  background-color: #019875;
+}
+
+.auth-container .auth-link {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+
+.auth-container .auth-link a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.auth-container .auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* --- Contact Section --- */
+.contact h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--primary);
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Kolom Kiri: Info & Peta */
+.contact-info {
+  flex: 1 1 45rem;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.contact-info h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.contact-info .info-item i,
+.contact-info .info-item svg {
+  color: var(--primary);
+  margin-right: 1.5rem;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  flex-shrink: 0;
+}
+
+.contact-info iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border: 2px solid var(--primary);
+}
+
+/* Kolom Kanan: Form Pesan */
+.contact-form {
+  flex: 1 1 45rem;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.contact-form .input-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .input-group input,
+.contact-form .input-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  transition: border 0.3s ease;
+}
+
+.contact-form .input-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .input-group input:focus,
+.contact-form .input-group textarea:focus {
+  border-color: var(--primary);
+}
+
+.contact-form .btn-submit {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-form .btn-submit:hover {
+  background-color: #019875;
+}
+
+/* --- Form Pendaftaran --- */
+.daftar-section {
+  padding: 10rem 1.4rem 8rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #f4f7f6 0%, #e5edea 100%);
+}
+
+.daftar-container {
+  background-color: #ffffff;
+  padding: 4rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 550px;
+  border-top: 5px solid var(--primary);
+}
+
+.daftar-container h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.daftar-container .input-group {
+  margin-bottom: 2rem;
+}
+
+.daftar-container .input-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #444;
+  font-size: 1.4rem;
+}
+
+.daftar-container .input-group input,
+.daftar-container .input-group textarea,
+.daftar-container .input-group select {
+  width: 100%;
+  padding: 1.4rem;
+  font-size: 1.4rem;
+  color: #333;
+  background-color: #f9fbfb;
+  border: 1px solid #dce1e1;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Efek saat kotak input diklik/fokus (Glow Effect) */
+.daftar-container .input-group input:focus,
+.daftar-container .input-group textarea:focus,
+.daftar-container .input-group select:focus {
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(1, 152, 117, 0.15);
+  outline: none;
+}
+
+.daftar-container .input-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Teks Peringatan Error (Validasi) */
+.error-msg {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  display: none;
+  margin-top: 0.8rem;
+  font-weight: 500;
+}
+
+/* Tombol Submit */
+.daftar-container .btn-submit {
+  width: 100%;
+  padding: 1.4rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(1, 152, 117, 0.3);
+}
+
+/* Efek saat tombol di-hover (disentuh mouse) */
+.daftar-container .btn-submit:hover {
+  background-color: #017c5f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(1, 152, 117, 0.4);
+}
+
+/* Footer Icon Fix */
+footer p i,
+footer p svg {
+  flex-shrink: 0;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* Efek saat tombol ditekan (diklik) */
+.daftar-container .btn-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(1, 152, 117, 0.3);
+}
